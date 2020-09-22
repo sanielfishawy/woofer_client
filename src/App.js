@@ -9,6 +9,7 @@ import { FrequencyRange } from './features/woofer/FrequencyRange'
 export default function App(){
     return (
         <Container>
+            <h1>Woofer</h1>
             <Row>
                 <Col xs={1} style={{margin: '20px'}}><PowerSwitch/></Col>
                 <Col sm style={{margin: '20px'}}><VolumeRange/></Col>
