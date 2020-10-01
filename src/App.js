@@ -6,7 +6,7 @@ import { PowerSwitch } from './features/woofer/PowerSwitch'
 import { VolumeRange } from './features/woofer/VolumeRange'
 import { FrequencyRange } from './features/woofer/FrequencyRange'
 
-export default function App(){
+export default () => {
     return (
         <Container>
             <h1>Woofer</h1>

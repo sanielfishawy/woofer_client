@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import wooferReducer from '../features/woofer/wooferSlice'
+import wooferReducer, {fetchWooferState} from '../features/woofer/wooferSlice'
 
-export default configureStore({
+export const store = configureStore({
   reducer: {
     woofer: wooferReducer,
   },
 });
+
+(async () => {await store.dispatch(fetchWooferState())})()
