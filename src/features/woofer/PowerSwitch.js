@@ -2,12 +2,17 @@ import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 import Form from 'react-bootstrap/Form'
-import {setPower} from './wooferSlice'
+import {setPower, savePower} from './wooferSlice'
 
 export const PowerSwitch = () => {
 
     const power = useSelector(state => state.woofer.power)
     const dispatch = useDispatch()
+
+    const onPowerChange = async (checked) => {
+        dispatch(setPower(checked))
+        await dispatch(savePower(checked))
+    }
 
     return (
         <Form>
@@ -16,7 +21,7 @@ export const PowerSwitch = () => {
                 checked={power}
                 onlabel='On'
                 offlabel='Off'
-                onChange={checked =>  dispatch(setPower(checked))}
+                onChange={onPowerChange}
             />
         </Form>
     )
