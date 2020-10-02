@@ -7,6 +7,9 @@ import {setVolume, saveVolume} from './wooferSlice'
 export const VolumeRange = () => {
 
   const volume = useSelector(state => state.woofer.volume)
+  const minVolume = useSelector(state => state.woofer.min_volume)
+  const maxVolume = useSelector(state => state.woofer.max_volume)
+
   const dispatch = useDispatch()
 
   const onVolumeChange = async (e) => {
@@ -20,6 +23,8 @@ export const VolumeRange = () => {
         <RangeSlider
             value={volume}
             onChange={onVolumeChange}
+            min={minVolume}
+            max={maxVolume}
             tooltipLabel={volume => `${volume}%`}
         />
     </Form>

@@ -7,8 +7,11 @@ import {setFrequency, saveFrequency} from './wooferSlice'
 
 export const FrequencyRange = () => {
 
-  const [minFreq, defaultFreq, maxFreq] = [20, 40, 300]
   const frequency = useSelector( state => state.woofer.frequency )
+  const minFreq = useSelector( state => state.woofer.min_frequency )
+  const maxFreq = useSelector( state => state.woofer.max_frequency )
+  const defaultFreq = useSelector( state => state.woofer.default_frequency )
+
   const buttonVisibility = frequency === defaultFreq ? 'invisible' : 'visible'
   const dispatch = useDispatch()
   const onFrequencyChange = async (freq) => {

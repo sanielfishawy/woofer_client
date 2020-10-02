@@ -34,7 +34,17 @@ export const saveFrequency = createAsyncThunk('/woofer/saveFrequency', async fre
 
 const wooferSlice = createSlice({
     name: 'woofer',
-    initialState: {power:false, volume:0, frequency:40},
+    initialState: {
+        power:false,
+        volume:0,
+        min_volume: 0,
+        max_volume: 100,
+        default_volume: 0,
+        frequency:40,
+        min_frequency: 20,
+        max_frequency: 200,
+        default_frequency: 40,
+    },
     reducers:{
         setPower: (state, action) => { state.power = action.payload },
         setVolume: (state, action) => { state.volume = action.payload },
