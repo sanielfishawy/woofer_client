@@ -7,4 +7,8 @@ export const store = configureStore({
   },
 });
 
-(async () => {await store.dispatch(fetchWooferState())})()
+setInterval(
+  async () => {await store.dispatch(fetchWooferState())},
+  500,
+)
+  // (async () => {await store.dispatch(fetchWooferState())})()
